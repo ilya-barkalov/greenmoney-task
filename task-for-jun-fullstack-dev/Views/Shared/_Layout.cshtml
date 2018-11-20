@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenMoney</title>
+  <link href="~/Public/Style.css" rel="stylesheet" />
+</head>
+<body>
+  @RenderBody()
+
+  <script src="~/Public/jquery-3.3.1.min.js"></script>
+  <script src="~/Public/Main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#firstTask_btn').on('click', function () {
+        var start = $("input[name=start]").val();
+        var end = $("input[name=end]").val();
+
+        $('#firstTask').empty();
+
+        $.ajax({
+          type: "POST",
+          url: '@Url.Action("GetNums", "Home")',
+          content: "application/json; charset=utf-8",
+          dataType: "json",
+          data: { start: start, end: end },
+          success: function (response) {
+            $('#firstTask').append(
+              '<table>' + 
+                '<thead>' +
+                  '<tr>' +
+                    '<th>Число</th>' +
+                    '<th>Результат</th>' +
+                  '</tr>' +
+                '</thead>' +
+                '<tbody id="firstTask_output">' +
+                '</tbody>' +
+              '</table>'
+            );
+
+            for (var i = 0; i < response.Nums.length; i++) {
+              $('#firstTask_output').append('<tr><td>' + response.Nums[i].Increment + '</td><td>' + response.Nums[i].Value + '</td></tr>');
+            }
+              
+            $('#firstTask').toggleClass('task-box_hidden');
+            $('#firstTask').toggleClass('task-box_active');
+          }
+        });
+      });
+
+      $('#thirdTask_btn').on('click', function () {
+        var alphabet = $("input[name=alphabet]").val();
+        var letters = $("input[name=letters]").val();
+
+        $('#thirdTask').empty();
+
+        $.ajax({
+          type: "POST",
+          url: '@Url.Action("MissedLetter", "Home")',
+          content: "application/json; charset=utf-8",
+          dataType: "json",
+          data: { alphabet: alphabet, letters: letters },
+          success: function (response) {
+            $('#thirdTask').append('<p>' + response + '</p>')              
+            $('#thirdTask').toggleClass('task-box_hidden');
+            $('#thirdTask').toggleClass('task-box_active');
+          }
+        });
+      });
+
+      $('#fourthTask_btn').on('click', function () {
+        var first = $("input[name=firstNums]").val();
+        var second = $("input[name=secondNums]").val();
+
+        $('#fourthTask').empty();
+
+        $.ajax({
+          type: "POST",
+          url: '@Url.Action("Intersection", "Home")',
+          content: "application/json; charset=utf-8",
+          dataType: "json",
+          data: { first: first, second: second },
+          success: function (response) {
+            $('#fourthTask').append('<table>' +
+              '<thead>' +
+              '<tr>' +
+              '<th>Пересечение</th>' +
+              '<th>Квадрат</th>' +
+              '</tr>' +
+              '</thead>' +
+              '<tbody id="fourthTask_output">' +
+              '</tbody>' +
+              '</table>');
+
+            console.log(response);
+            
+            for (var i = 0; i < response.length; i++)
+              $('#fourthTask_output').append('<tr><td>' + response[i].Intersection + '</td><td>' + response[i].Square + '</td></tr>');
+
+
+            $('#fourthTask').toggleClass('task-box_hidden');
+            $('#fourthTask').toggleClass('task-box_active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

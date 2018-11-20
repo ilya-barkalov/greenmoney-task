@@ -1,0 +1,95 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+  .container h1 {
+    font-size: 200%
+  }
+
+.flex-item {
+  flex: 1 1 auto;
+  border: 1px dashed #000;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+  .flex-item h2 {
+    font-size: 150%;
+  }
+
+  .flex-item p {
+    text-align: justify;
+  }
+
+.task-box {
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column; 
+}
+
+  .task-box input[type=text] {
+    padding: 8px 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .task-box .task-box_hidden {
+    display: none;
+  }
+
+  .task-box .task-box_active {
+    display: block;
+  }
+
+  .task-box button {
+    padding: 8px 10px;
+    border: 1px solid #000;
+    background: #2ecc71;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+    .task-box button:hover {
+      background: #27ae60;
+    }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task-for-jun-fullstack-dev", "task-for-jun-fullstack-dev\task-for-jun-fullstack-dev.csproj", "{AE969033-7CE4-47DD-B805-A0CCF19302C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE969033-7CE4-47DD-B805-A0CCF19302C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE969033-7CE4-47DD-B805-A0CCF19302C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE969033-7CE4-47DD-B805-A0CCF19302C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE969033-7CE4-47DD-B805-A0CCF19302C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F8314A-E155-4DCD-B90D-B7EDB98B3E6D}
+	EndGlobalSection
+EndGlobal
