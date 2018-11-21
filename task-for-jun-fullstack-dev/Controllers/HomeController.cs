@@ -20,6 +20,23 @@ namespace task_for_jun_fullstack_dev.Controllers
       return Json(nums);
     }
 
+    public ActionResult GetRundomNums(int min, int max, int n)
+    {
+      Random random = new Random();
+
+      double[] randomNums = new double[n];
+
+      for (int i = 0; i < randomNums.Length; i++)
+        randomNums[i] = random.Next(min, max);
+
+      double k = randomNums.Sum() / 1;
+
+      for (int i = 0; i < randomNums.Length; i++)
+        randomNums[i] /= k;
+
+      return Json(randomNums);
+    }
+
     public ActionResult MissedLetter(string alphabet, string letters)
     {
       CAlphabet cAlphabet = new CAlphabet(alphabet);

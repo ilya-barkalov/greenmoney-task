@@ -50,6 +50,49 @@
         });
       });
 
+      $('#secondTask_btn').on('click', function () {
+        var n = $("input[name=n]").val();
+        var min = $("input[name=min]").val();
+        var max = $("input[name=max]").val();
+
+        console.log(n);
+        console.log(min);
+        console.log(max);
+
+        $('#secondTask').empty();
+
+        $.ajax({
+          type: "POST",
+          url: '@Url.Action("GetRundomNums", "Home")',
+          content: "application/json; charset=utf-8",
+          dataType: "json",
+          data: { n: n, min: min, max: max },
+          success: function (response) {
+            $('#secondTask').append('<table>' +
+              '<thead>' +
+              '<tr>' +
+              '<th>Номер</th>' +
+              '<th>Случайное число</th>' +
+              '</tr>' +
+              '</thead>' +
+              '<tbody id="secondTask_output">' +
+              '</tbody>' +
+              '</table>');
+
+            var total = 0;
+            for (var i = 0; i < response.length; i++) {
+              $('#secondTask_output').append('<tr><td>' + i + '</td><td>' + response[i] + '</td></tr>');
+              total += response[i];
+            }
+              
+            $('#secondTask_output').append('<tr><td><strong>Сумма:</strong></td><td>' + total + '</td></tr>');
+
+            $('#secondTask').toggleClass('task-box_hidden');
+            $('#secondTask').toggleClass('task-box_active');
+          }
+        });
+      });
+
       $('#thirdTask_btn').on('click', function () {
         var alphabet = $("input[name=alphabet]").val();
         var letters = $("input[name=letters]").val();
@@ -93,12 +136,9 @@
               '<tbody id="fourthTask_output">' +
               '</tbody>' +
               '</table>');
-
-            console.log(response);
             
             for (var i = 0; i < response.length; i++)
               $('#fourthTask_output').append('<tr><td>' + response[i].Intersection + '</td><td>' + response[i].Square + '</td></tr>');
-
 
             $('#fourthTask').toggleClass('task-box_hidden');
             $('#fourthTask').toggleClass('task-box_active');

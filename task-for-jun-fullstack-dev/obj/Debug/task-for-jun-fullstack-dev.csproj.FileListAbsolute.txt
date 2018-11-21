@@ -1,4 +1,3 @@
-C:\Users\ilya-barkalov\source\repos\task-for-jun-fullstack-dev\task-for-jun-fullstack-dev\obj\Debug\task-for-jun-fullstack-dev.csprojAssemblyReference.cache
 C:\Users\ilya-barkalov\source\repos\task-for-jun-fullstack-dev\task-for-jun-fullstack-dev\obj\Debug\task-for-jun-fullstack-dev.csproj.CoreCompileInputs.cache
 C:\Users\ilya-barkalov\source\repos\task-for-jun-fullstack-dev\task-for-jun-fullstack-dev\bin\task-for-jun-fullstack-dev.dll.config
 C:\Users\ilya-barkalov\source\repos\task-for-jun-fullstack-dev\task-for-jun-fullstack-dev\bin\task-for-jun-fullstack-dev.dll
